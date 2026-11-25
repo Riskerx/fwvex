@@ -226,9 +226,10 @@ def _link_libs(build: Path, elf_re: str = ZEPHYR_ELF) -> list[Path]:
         lm = re.search(r"^  LINK_LIBRARIES = (.*)$", block, re.M)
         if not lm:
             continue
-        toks = shlex.split(lm.group(1))
+        # Windows paths use backslashes, which shlex would read as escapes: use forward slashes.
+        toks = shlex.split(lm.group(1).replace("\\", "/"))
         lp = re.search(r"^  LINK_PATH = (.*)$", block, re.M)
-        toks_path = shlex.split(lp.group(1)) if lp else []
+        toks_path = shlex.split(lp.group(1).replace("\\", "/")) if lp else []
         search = []  # -L directories outside the build (vendor library folders, not the toolchain)
         for i, tok in enumerate(toks_path + toks):
             d = tok[2:] if tok.startswith("-L") and len(tok) > 2 else None
