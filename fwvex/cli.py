@@ -1,0 +1,170 @@
+"""Command line: `fwvex sbom` writes the SBOM, `fwvex check` adds known CVEs and a VEX verdict for each."""
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+from pathlib import Path
+
+from . import __version__, nvd
+from .applicability import assess, kconfig_symbols
+from .build import scan
+from .cyclonedx import bom, iter_components
+from .identify import cpe_variants
+
+
+def _image_files(img) -> set[str]:
+    """Files of the framework (Zephyr, ESP-IDF) in this image, relative to the framework root."""
+    out = set()
+    for m in img.modules.values():
+        try:
+            rel = m.path.resolve().relative_to(img.zephyr_base.resolve())
+        except ValueError:
+            continue
+        out |= {f if rel == Path(".") else (rel / f).as_posix() for f in m.files}
+    return out
+
+
+def _verdict(cve_summary: dict, comp_name: str, img, fixed: dict[str, str], pkg_files: set[str]):
+    if cve_summary["id"] in fixed:
+        v = assess("", set(), {})
+        v.state, v.justification = "resolved", None
+        v.detail = "Vendor marks this CVE as fixed in this version: " + (fixed[cve_summary["id"]] or "no reason given")
+        return v
+    if comp_name in ("zephyr", "esp-idf") and img is not None and img.framework == comp_name:
+        return assess(cve_summary["description"], _image_files(img), img.kconfig, img.framework,
+                      img.components_built, img.components_known, img.zephyr_base,
+                      kconfig_symbols(img.zephyr_base))
+    v = assess("", set(), {})  # file-level evidence only exists for the frameworks themselves
+    fl = sorted(pkg_files)
+    shown = ", ".join(fl[:6]) + (f" and {len(fl) - 6} more" if len(fl) > 6 else "")
+    v.detail = (f"Matched by CPE; review by hand. {len(fl)} file(s) of this package are in the firmware"
+                + (f": {shown}" if fl else "") + ".")
+    return v
+
+
+def vulnerabilities(images, b: dict) -> tuple[list[dict], list[dict]]:
+    """Look up CVEs for every component with a CPE, judge each against the image(s) that contain it,
+    and return (CycloneDX vulnerabilities, report rows). One entry per CVE and component name; its
+    `affects` lists only the images where the CVE needs review (or all of them, if none does)."""
+    img_by_name = {img.name: img for img in images}
+    groups: dict[tuple[str, str], list[tuple[dict, dict, object]]] = {}  # (cve, comp name) -> [(cve, comp, img)]
+    for c in iter_components(b):
+        if not c.get("cpe"):
+            continue
+        props = c.get("properties", [])
+        found = {}
+        for cp in [c["cpe"]] + [p["value"] for p in props if p.get("name") == "fwvex:alt_cpe"]:
+            for variant in cpe_variants(cp):
+                for cve in nvd.cves_for_cpe(variant):
+                    found.setdefault(cve["id"], cve)
+        img = img_by_name.get(c["bom-ref"].rsplit(":", 1)[0])
+        for cve in found.values():
+            groups.setdefault((cve["id"], c["name"]), []).append((cve, c, img))
+    vulns, rows = [], []
+    for (cve_id, comp_name), members in sorted(groups.items()):
+        s = nvd.summary(members[0][0])
+        judged = []
+        for _, c, img in members:
+            fixed = {}
+            for p in c.get("properties", []):
+                if p.get("name") == "fwvex:vendor_fixed_cve":
+                    k, _, why = p["value"].partition(": ")
+                    fixed[k] = why
+            files = set(img.modules[comp_name].files) if img is not None and comp_name in img.modules else set()
+            judged.append((c, _verdict(s, comp_name, img, fixed, files)))
+        open_ = [(c, v) for c, v in judged if v.state == "in_triage"]
+        c0, v = (open_ or judged)[0]
+        refs = [c["bom-ref"] for c, _ in (open_ or judged)]
+        analysis = {"state": v.state, "detail": v.detail}
+        if v.justification:
+            analysis["justification"] = v.justification
+        entry = {"id": s["id"], "source": {"name": "NVD", "url": f"https://nvd.nist.gov/vuln/detail/{s['id']}"},
+                 "description": s["description"], "published": s["published"] + "T00:00:00Z" if s["published"] else None,
+                 "affects": [{"ref": r} for r in refs], "analysis": analysis}
+        if s["score"] is not None:
+            entry["ratings"] = [{"score": s["score"], "severity": (s["severity"] or "unknown").lower(),
+                                 "source": {"name": "NVD"}}]
+        vulns.append({k: v_ for k, v_ in entry.items() if v_ is not None})
+        rows.append({**s, "component": comp_name, "state": v.state, "justification": v.justification,
+                     "detail": v.detail, "images": [r.rsplit(":", 1)[0] for r in refs]})
+    return vulns, rows
+
+
+def report_md(b: dict, rows: list[dict]) -> str:
+    top = b["metadata"]["component"]
+    n_aff = [r for r in rows if r["state"] not in ("not_affected", "resolved")]
+    lines = [f"# Vulnerability report: {top['name']} {top['version']}", "",
+             f"Generated by fwvex {__version__}. Source: NVD. Verdicts are evidence-based suggestions; "
+             "review each one before you rely on it.", "",
+             f"- Known CVEs matched to components: **{len(rows)}**",
+             f"- Not affected, vulnerable code not in the firmware: **{sum(r['justification'] == 'code_not_present' for r in rows)}**",
+             f"- Not affected, subsystem not enabled: **{sum(r['justification'] == 'requires_configuration' for r in rows)}**",
+             f"- Fixed in this version according to the vendor: **{sum(r['state'] == 'resolved' for r in rows)}**",
+             f"- Need review (code present or unknown): **{len(n_aff)}**", ""]
+    if n_aff:
+        lines += ["## Need review", "", "| CVE | Score | Component | Image | Why |", "|---|---|---|---|---|"]
+        for r in sorted(n_aff, key=lambda r: -(r["score"] or 0)):
+            lines.append(f"| [{r['id']}](https://nvd.nist.gov/vuln/detail/{r['id']}) | {r['score'] or ''} | "
+                         f"{r['component']} | {', '.join(r['images'])} | {r['detail'].replace('|', '/')} |")
+        lines.append("")
+    na = [r for r in rows if r["state"] in ("not_affected", "resolved")]
+    if na:
+        lines += ["## Not affected", "", "| CVE | Score | Why |", "|---|---|---|"]
+        for r in sorted(na, key=lambda r: r["id"]):
+            lines.append(f"| [{r['id']}](https://nvd.nist.gov/vuln/detail/{r['id']}) | {r['score'] or ''} | "
+                         f"{r['detail'].replace('|', '/')} |")
+    return "\n".join(lines) + "\n"
+
+
+def main(argv: list[str] | None = None) -> int:
+    ap = argparse.ArgumentParser(prog="fwvex", description=__doc__)
+    ap.add_argument("--version", action="version", version=__version__)
+    sub = ap.add_subparsers(dest="cmd", required=True)
+    for name, hlp in (("sbom", "write a CycloneDX SBOM for a Zephyr, nRF Connect SDK or ESP-IDF build"),
+                      ("check", "SBOM plus known CVEs, each with an evidence-based VEX verdict")):
+        p = sub.add_parser(name, help=hlp)
+        p.add_argument("-d", "--build-dir", default="build", type=Path)
+        p.add_argument("-o", "--output", type=Path, help="SBOM output path (default: <build>/fwvex/sbom.cdx.json)")
+        p.add_argument("--product", help="product name (default: application directory name)")
+        p.add_argument("--product-version", help="product/firmware version")
+        if name == "check":
+            p.add_argument("--fail-on", choices=["any", "low", "medium", "high", "critical"],
+                           help="exit with code 1 if a CVE that needs review has at least this severity "
+                                "(for CI; 'any' includes unscored CVEs)")
+    a = ap.parse_args(argv)
+    images = scan(a.build_dir)
+    b = bom(images, a.product, a.product_version)
+    out = a.output or a.build_dir / "fwvex" / "sbom.cdx.json"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    rc = 0
+    if a.cmd == "check":
+        try:
+            vulns, rows = vulnerabilities(images, b)
+        except (OSError, ValueError) as e:  # network errors (OSError) or a non-JSON error page (ValueError)
+            print(f"error: could not query NVD ({e}). The SBOM without vulnerabilities is still written.",
+                  file=sys.stderr)
+            out.write_text(json.dumps(b, indent=2))
+            return 2
+        b["vulnerabilities"] = vulns
+        rep = out.with_name("vulnerability-report.md")
+        rep.write_text(report_md(b, rows))
+        print(f"report: {rep}")
+        if a.fail_on:
+            order = ["low", "medium", "high", "critical"]
+            floor = -1 if a.fail_on == "any" else order.index(a.fail_on)
+            bad = [r for r in rows if r["state"] == "in_triage" and
+                   (floor < 0 or (r["severity"] or "").lower() in order[floor:])]
+            if bad:
+                print(f"{len(bad)} CVE(s) need review at or above '{a.fail_on}'", file=sys.stderr)
+                rc = 1
+    out.write_text(json.dumps(b, indent=2))
+    comps = list(iter_components(b))
+    print(f"sbom:   {out}  ({len(images)} image(s), {len(comps)} components, "
+          f"{sum(1 for c in comps if c.get('cpe'))} with CPE, {sum(1 for c in comps if c.get('purl'))} with PURL, "
+          f"{sum(1 for c in comps if any(p.get('name') == 'fwvex:prebuilt' for p in c.get('properties', [])))} prebuilt blobs)")
+    return rc
+
+
+if __name__ == "__main__":
+    sys.exit(main())

@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fwvex"
+version = "0.1.0"
+description = "Vulnerability-matchable CycloneDX SBOMs and evidence-based VEX for Zephyr, nRF Connect SDK and ESP-IDF firmware"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "Riskerx" }]
+keywords = ["sbom", "vex", "cyclonedx", "firmware", "zephyr", "esp-idf", "nrf-connect-sdk", "cve", "cyber-resilience-act", "embedded"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Security",
+    "Topic :: Software Development :: Embedded Systems",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/Riskerx/fwvex"
+Issues = "https://github.com/Riskerx/fwvex/issues"
+Changelog = "https://github.com/Riskerx/fwvex/blob/main/CHANGELOG.md"
+
+[project.scripts]
+fwvex = "fwvex.cli:main"
+
+[tool.setuptools]
+packages = ["fwvex"]

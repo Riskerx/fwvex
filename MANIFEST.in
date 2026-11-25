@@ -1,0 +1,2 @@
+include LICENSE CHANGELOG.md
+recursive-include tests *.py *.json

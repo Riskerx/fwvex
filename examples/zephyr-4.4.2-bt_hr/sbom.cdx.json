@@ -1,0 +1,1255 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:63ee9f59-297e-4a9c-b96c-4afb62a14676",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-11-24T18:10:59Z",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "fwvex",
+          "version": "0.1.0"
+        }
+      ]
+    },
+    "component": {
+      "type": "firmware",
+      "bom-ref": "product",
+      "name": "peripheral_hr",
+      "version": "zephyr-4.4.2-sample",
+      "properties": [
+        {
+          "name": "fwvex:image:peripheral_hr:board",
+          "value": "nrf52840dk/nrf52840"
+        },
+        {
+          "name": "fwvex:image:peripheral_hr:elf_sha256",
+          "value": "62b91a439acdcd1c9ce28c0668445a07b09c93db3d76419e1a3e07d4bee9f1bf"
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "type": "firmware",
+      "bom-ref": "image:peripheral_hr",
+      "name": "peripheral_hr",
+      "version": "zephyr-4.4.2-sample",
+      "components": [
+        {
+          "type": "operating-system",
+          "bom-ref": "peripheral_hr:zephyr",
+          "name": "zephyr",
+          "version": "4.4.2",
+          "cpe": "cpe:2.3:o:zephyrproject:zephyr:4.4.2:*:*:*:*:*:*:*",
+          "purl": "pkg:github/zephyrproject-rtos/zephyr@v4.4.2",
+          "externalReferences": [
+            {
+              "type": "vcs",
+              "url": "https://github.com/zephyrproject-rtos/zephyr"
+            }
+          ],
+          "properties": [
+            {
+              "name": "fwvex:compiled_files",
+              "value": "186"
+            },
+            {
+              "name": "fwvex:compiled_not_linked",
+              "value": "9"
+            },
+            {
+              "name": "fwvex:git_commit",
+              "value": "dccb09599635bdff17633fa7e9dab014b91dce90"
+            },
+            {
+              "name": "fwvex:source_purl",
+              "value": "pkg:github/zephyrproject-rtos/zephyr@dccb09599635bdff17633fa7e9dab014b91dce90"
+            }
+          ],
+          "components": [
+            {
+              "type": "library",
+              "bom-ref": "peripheral_hr:zephyr:arch",
+              "name": "zephyr/arch",
+              "version": "4.4.2",
+              "properties": [
+                {
+                  "name": "fwvex:compiled_files",
+                  "value": "29"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "bom-ref": "peripheral_hr:zephyr:drivers/clock_control",
+              "name": "zephyr/drivers/clock_control",
+              "version": "4.4.2",
+              "properties": [
+                {
+                  "name": "fwvex:compiled_files",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "bom-ref": "peripheral_hr:zephyr:drivers/console",
+              "name": "zephyr/drivers/console",
+              "version": "4.4.2",
+              "properties": [
+                {
+                  "name": "fwvex:compiled_files",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "bom-ref": "peripheral_hr:zephyr:drivers/entropy",
+              "name": "zephyr/drivers/entropy",
+              "version": "4.4.2",
+              "properties": [
+                {
+                  "name": "fwvex:compiled_files",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "bom-ref": "peripheral_hr:zephyr:drivers/gpio",
+              "name": "zephyr/drivers/gpio",
+              "version": "4.4.2",
+              "properties": [
+                {
+                  "name": "fwvex:compiled_files",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "bom-ref": "peripheral_hr:zephyr:drivers/pinctrl",
+              "name": "zephyr/drivers/pinctrl",
+              "version": "4.4.2",
+              "properties": [
+                {
+                  "name": "fwvex:compiled_files",
+                  "value": "2"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "bom-ref": "peripheral_hr:zephyr:drivers/serial",
+              "name": "zephyr/drivers/serial",
+              "version": "4.4.2",
+              "properties": [
+                {
+                  "name": "fwvex:compiled_files",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "bom-ref": "peripheral_hr:zephyr:drivers/timer",
+              "name": "zephyr/drivers/timer",
+              "version": "4.4.2",
+              "properties": [
+                {
+                  "name": "fwvex:compiled_files",
+                  "value": "2"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "bom-ref": "peripheral_hr:zephyr:kernel",
+              "name": "zephyr/kernel",
+              "version": "4.4.2",
+              "properties": [
+                {
+                  "name": "fwvex:compiled_files",
+                  "value": "21"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "bom-ref": "peripheral_hr:zephyr:lib/heap",
+              "name": "zephyr/lib/heap",
+              "version": "4.4.2",
+              "properties": [
+                {
+                  "name": "fwvex:compiled_files",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "bom-ref": "peripheral_hr:zephyr:lib/libc",
+              "name": "zephyr/lib/libc",
+              "version": "4.4.2",
+              "properties": [
+                {
+                  "name": "fwvex:compiled_files",
+                  "value": "11"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "bom-ref": "peripheral_hr:zephyr:lib/net_buf",
+              "name": "zephyr/lib/net_buf",
+              "version": "4.4.2",
+              "properties": [
+                {
+                  "name": "fwvex:compiled_files",
+                  "value": "2"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "bom-ref": "peripheral_hr:zephyr:lib/os",
+              "name": "zephyr/lib/os",
+              "version": "4.4.2",
+              "properties": [
+                {
+                  "name": "fwvex:compiled_files",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "bom-ref": "peripheral_hr:zephyr:lib/posix",
+              "name": "zephyr/lib/posix",
+              "version": "4.4.2",
+              "properties": [
+                {
+                  "name": "fwvex:compiled_files",
+                  "value": "3"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "bom-ref": "peripheral_hr:zephyr:lib/utils",
+              "name": "zephyr/lib/utils",
+              "version": "4.4.2",
+              "properties": [
+                {
+                  "name": "fwvex:compiled_files",
+                  "value": "13"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "bom-ref": "peripheral_hr:zephyr:lib/uuid",
+              "name": "zephyr/lib/uuid",
+              "version": "4.4.2",
+              "properties": [
+                {
+                  "name": "fwvex:compiled_files",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "bom-ref": "peripheral_hr:zephyr:misc",
+              "name": "zephyr/misc",
+              "version": "4.4.2",
+              "properties": [
+                {
+                  "name": "fwvex:compiled_files",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "bom-ref": "peripheral_hr:zephyr:modules",
+              "name": "zephyr/modules",
+              "version": "4.4.2",
+              "properties": [
+                {
+                  "name": "fwvex:compiled_files",
+                  "value": "3"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "bom-ref": "peripheral_hr:zephyr:soc",
+              "name": "zephyr/soc",
+              "version": "4.4.2",
+              "properties": [
+                {
+                  "name": "fwvex:compiled_files",
+                  "value": "7"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "bom-ref": "peripheral_hr:zephyr:subsys/bluetooth/common",
+              "name": "zephyr/subsys/bluetooth/common",
+              "version": "4.4.2",
+              "properties": [
+                {
+                  "name": "fwvex:compiled_files",
+                  "value": "4"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "bom-ref": "peripheral_hr:zephyr:subsys/bluetooth/controller",
+              "name": "zephyr/subsys/bluetooth/controller",
+              "version": "4.4.2",
+              "properties": [
+                {
+                  "name": "fwvex:compiled_files",
+                  "value": "41"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "bom-ref": "peripheral_hr:zephyr:subsys/bluetooth/crypto",
+              "name": "zephyr/subsys/bluetooth/crypto",
+              "version": "4.4.2",
+              "properties": [
+                {
+                  "name": "fwvex:compiled_files",
+                  "value": "2"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "bom-ref": "peripheral_hr:zephyr:subsys/bluetooth/host",
+              "name": "zephyr/subsys/bluetooth/host",
+              "version": "4.4.2",
+              "properties": [
+                {
+                  "name": "fwvex:compiled_files",
+                  "value": "17"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "bom-ref": "peripheral_hr:zephyr:subsys/bluetooth/services",
+              "name": "zephyr/subsys/bluetooth/services",
+              "version": "4.4.2",
+              "properties": [
+                {
+                  "name": "fwvex:compiled_files",
+                  "value": "4"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "bom-ref": "peripheral_hr:zephyr:subsys/logging",
+              "name": "zephyr/subsys/logging",
+              "version": "4.4.2",
+              "properties": [
+                {
+                  "name": "fwvex:compiled_files",
+                  "value": "6"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "bom-ref": "peripheral_hr:zephyr:subsys/mem_mgmt",
+              "name": "zephyr/subsys/mem_mgmt",
+              "version": "4.4.2",
+              "properties": [
+                {
+                  "name": "fwvex:compiled_files",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "bom-ref": "peripheral_hr:zephyr:subsys/random",
+              "name": "zephyr/subsys/random",
+              "version": "4.4.2",
+              "properties": [
+                {
+                  "name": "fwvex:compiled_files",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "bom-ref": "peripheral_hr:zephyr:subsys/tracing",
+              "name": "zephyr/subsys/tracing",
+              "version": "4.4.2",
+              "properties": [
+                {
+                  "name": "fwvex:compiled_files",
+                  "value": "1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "peripheral_hr:hal_nordic",
+          "name": "hal_nordic",
+          "version": "44fd3d44b15cb75f80a25b4679f91d2787e28664",
+          "purl": "pkg:github/zephyrproject-rtos/hal_nordic@44fd3d44b15cb75f80a25b4679f91d2787e28664",
+          "externalReferences": [
+            {
+              "type": "vcs",
+              "url": "https://github.com/zephyrproject-rtos/hal_nordic"
+            }
+          ],
+          "properties": [
+            {
+              "name": "fwvex:compiled_files",
+              "value": "12"
+            },
+            {
+              "name": "fwvex:git_commit",
+              "value": "44fd3d44b15cb75f80a25b4679f91d2787e28664"
+            },
+            {
+              "name": "fwvex:west_revision",
+              "value": "44fd3d44b15cb75f80a25b4679f91d2787e28664"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "peripheral_hr:mbedtls",
+          "name": "mbedtls",
+          "version": "4.1.0",
+          "cpe": "cpe:2.3:a:arm:mbed_tls:4.1.0:*:*:*:*:*:*:*",
+          "purl": "pkg:github/Mbed-TLS/mbedtls@v4.1.0",
+          "externalReferences": [
+            {
+              "type": "vcs",
+              "url": "https://github.com/zephyrproject-rtos/mbedtls"
+            }
+          ],
+          "properties": [
+            {
+              "name": "fwvex:compiled_files",
+              "value": "21"
+            },
+            {
+              "name": "fwvex:compiled_not_linked",
+              "value": "12"
+            },
+            {
+              "name": "fwvex:git_commit",
+              "value": "a3e190fe44c78d1ba67f55979e1257328cc7d0d8"
+            },
+            {
+              "name": "fwvex:west_revision",
+              "value": "a3e190fe44c78d1ba67f55979e1257328cc7d0d8"
+            },
+            {
+              "name": "fwvex:source_purl",
+              "value": "pkg:github/zephyrproject-rtos/mbedtls@a3e190fe44c78d1ba67f55979e1257328cc7d0d8"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "peripheral_hr:tf-psa-crypto",
+          "name": "tf-psa-crypto",
+          "version": "1.1.0",
+          "cpe": "cpe:2.3:a:arm:tf-psa-crypto:1.1.0:*:*:*:*:*:*:*",
+          "purl": "pkg:github/Mbed-TLS/TF-PSA-Crypto@v1.1.0",
+          "externalReferences": [
+            {
+              "type": "vcs",
+              "url": "https://github.com/zephyrproject-rtos/tf-psa-crypto"
+            }
+          ],
+          "properties": [
+            {
+              "name": "fwvex:compiled_files",
+              "value": "18"
+            },
+            {
+              "name": "fwvex:compiled_not_linked",
+              "value": "65"
+            },
+            {
+              "name": "fwvex:git_commit",
+              "value": "dc575a2ddcc8cb16275d24c42a52eaf79ebe2231"
+            },
+            {
+              "name": "fwvex:west_revision",
+              "value": "dc575a2ddcc8cb16275d24c42a52eaf79ebe2231"
+            },
+            {
+              "name": "fwvex:source_purl",
+              "value": "pkg:github/zephyrproject-rtos/tf-psa-crypto@dc575a2ddcc8cb16275d24c42a52eaf79ebe2231"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "product",
+      "dependsOn": [
+        "image:peripheral_hr"
+      ]
+    },
+    {
+      "ref": "image:peripheral_hr",
+      "dependsOn": [
+        "peripheral_hr:zephyr",
+        "peripheral_hr:hal_nordic",
+        "peripheral_hr:mbedtls",
+        "peripheral_hr:tf-psa-crypto"
+      ]
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "id": "CVE-2026-10636",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10636"
+      },
+      "description": "In Zephyr's IPv4 IGMP implementation, igmp_send() in subsys/net/ip/igmp.c read the network interface back out of the packet via net_pkt_iface(pkt) after the packet had been handed to net_send_data(). On the successful-send path the packet's last reference may already have been released by the L2 driver or by the network stack's TX handling (synchronously in the default NET_TC_TX_COUNT=0 immediate-transmit configuration), returning the net_pkt slab block to its free list. The subsequent net_pkt_iface(pkt) dereferences the freed packet, a use-after-free read; with CONFIG_NET_STATISTICS_PER_INTERFACE the resulting dangling interface pointer is further dereferenced for a statistics-counter write.\n\nThe IGMP send path is reachable without authentication from inbound IPv4 IGMP membership queries addressed to 224.0.0.1 (net_ipv4_igmp_input -> send_igmp_report/send_igmp_v3_report -> igmp_send), as well as from local multicast join/leave/rejoin operations.\n\nRealistic impact is undefined behavior and potential denial of service (sporadic crash or stats corruption); a controllable write requires the asynchronous TX path plus a concurrent slab reuse.\n\nThe flaw was introduced with IGMPv2 support and affects releases from v2.6.0 through v4.4.0. The fix caches the interface pointer before sending. Note the analogous IPv6 MLD path (mld_send in subsys/net/ip/ipv6_mld.c) retains the same unfixed pattern.",
+      "published": "2026-06-16T00:00:00Z",
+      "affects": [
+        {
+          "ref": "peripheral_hr:zephyr"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "The CVE names subsys/net/ip/igmp.c, subsys/net/ip/ipv6_mld.c; none of this code is in this firmware (not compiled, or removed by the linker).",
+        "justification": "code_not_present"
+      },
+      "ratings": [
+        {
+          "score": 3.7,
+          "severity": "low",
+          "source": {
+            "name": "NVD"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CVE-2026-10637",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10637"
+      },
+      "description": "subsys/net/ip/ipv6_mld.c:mld_send() read the packet interface via net_pkt_iface(pkt) after net_send_data(pkt) returned successfully. Per the network stack's ownership contract (include/zephyr/net/net_core.h, and the explicit warning in subsys/net/ip/net_core.c:453-460 'do not use pkt after that call'), a successful send transfers ownership of the net_pkt and the L2 driver frees it (e.g. ethernet_send() unrefs the packet on success, subsys/net/l2/ethernet/ethernet.c:790), returning it to its k_mem_slab.\n\nThe subsequent net_pkt_iface(pkt) is therefore a read of a freed object; the recovered interface pointer is then dereferenced and incremented by the per-interface statistics path (net_stats.h UPDATE_STAT/SET_STAT) when CONFIG_NET_STATISTICS_PER_INTERFACE is enabled. If the freed slot is concurrently reallocated, pkt->iface may read back as NULL (NULL-pointer dereference / crash) or as a stale/garbage pointer (stray increment write / memory corruption).\n\nThe path is reachable remotely on the local link without authentication: handle_mld_query() (registered for NET_ICMPV6_MLD_QUERY) responds to a valid MLDv2 General Query (unspecified multicast address, hop limit 1) by calling send_mld_report() -> mld_send().\n\nThe result is a remotely triggerable denial of service of the networking stack, with a narrow possibility of memory corruption. The fix caches the interface in a local before sending and no longer touches the packet after net_send_data(). The IPv4/IGMP sibling (igmp_send) already used the corrected pattern.",
+      "published": "2026-06-16T00:00:00Z",
+      "affects": [
+        {
+          "ref": "peripheral_hr:zephyr"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "The CVE names subsys/net/ip/ipv6_mld.c, subsys/net/ip/net_core.c, subsys/net/l2/ethernet/ethernet.c; none of this code is in this firmware (not compiled, or removed by the linker).",
+        "justification": "code_not_present"
+      },
+      "ratings": [
+        {
+          "score": 5.9,
+          "severity": "medium",
+          "source": {
+            "name": "NVD"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CVE-2026-10638",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10638"
+      },
+      "description": "subsys/net/ip/icmpv6.c reads the network interface from a net_pkt after that packet has been handed to net_try_send_data(). In icmpv6_handle_echo_request() and net_icmpv6_send_error(), the post-send statistics update calls net_pkt_iface(reply)/net_pkt_iface(pkt) on the just-sent packet.\n\nThe send path (net_try_send_data -> net_if_tx) unreferences and may free the packet back to its memory slab before returning \u2014 synchronously in the RX thread when no TX queue is configured (CONFIG_NET_TC_TX_COUNT == 0), and asynchronously the driver/L2 may already have freed it otherwise. net_pkt_iface() therefore dereferences a freed (and possibly reused) net_pkt; with CONFIG_NET_STATISTICS_PER_INTERFACE the stale iface pointer is further dereferenced and written through (iface->stats.icmp.sent++), turning the use-after-free read into a write through an attacker-influenceable pointer.\n\nThe core stack already documents this hazard in net_core.c (\"do not use pkt after that call\") and caches iface before sending; the ICMPv6 callers did not.\n\nAn unauthenticated remote attacker triggers the flaw simply by sending an ICMPv6 Echo Request (ping) or an IPv6 packet that elicits an ICMPv6 error (unknown next header, fragment reassembly timeout, destination unreachable), leading to denial of service via crash and potential memory corruption. Affected: Zephyr networking with CONFIG_NET_NATIVE_IPV6, roughly v4.2.0 through v4.4.0.\n\nThe fix caches the interface pointer before sending and uses it for all statistics updates; the sibling commit 86e21665d46 fixes the identical bug in ICMPv4.",
+      "published": "2026-06-16T00:00:00Z",
+      "affects": [
+        {
+          "ref": "peripheral_hr:zephyr"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "The CVE names subsys/net/ip/icmpv6.c; none of this code is in this firmware (not compiled, or removed by the linker).",
+        "justification": "code_not_present"
+      },
+      "ratings": [
+        {
+          "score": 5.9,
+          "severity": "medium",
+          "source": {
+            "name": "NVD"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CVE-2026-10639",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10639"
+      },
+      "description": "In Zephyr's native IPv4 stack, icmpv4_handle_echo_request() in subsys/net/ip/icmpv4.c builds an echo-reply packet (reply), hands it to net_try_send_data(), and then, on success, calls net_stats_update_icmp_sent(net_pkt_iface(reply)). net_try_send_data() transfers ownership of reply to the TX path (net_if_try_queue_tx -> net_if_tx -> L2/driver send, or the asynchronous net_if_tx_thread), which can unref it to refcount 0 and return the struct net_pkt to its slab (net_pkt_unref -> k_mem_slab_free) before the stats line runs. net_core.c documents this exact contract ('the pkt might contain garbage already ... do not use pkt after that call').\n\nThe post-send net_pkt_iface(reply) therefore reads reply->iface out of a freed (and possibly already reallocated) net_pkt, a use-after-free read; with CONFIG_NET_STATISTICS_PER_INTERFACE the stats macro additionally increments a counter through that value, i.e. a dereference/write through a stale or recycled-slot pointer.\n\nThe path is reached unauthenticated by any remote host that pings the device (net_icmpv4_input -> net_icmp_call_ipv4_handlers -> icmpv4_handle_echo_request) and is gated on CONFIG_NET_STATISTICS_ICMP. Impact is a probabilistic read of recycled packet memory plus a possible wild-pointer write under a timing race, leading most likely to corrupted interface statistics or a remotely triggerable crash (DoS).\n\nThe defect was introduced in 2019 (v1.14) and is present through v4.4.0. The companion change in net_icmpv4_send_error() is not a use-after-free because it reads net_pkt_iface(orig), the caller-owned received packet, which stays alive across the send. The fix caches the interface pointer from the live received packet before sending and uses it for the post-send stats updates.",
+      "published": "2026-06-16T00:00:00Z",
+      "affects": [
+        {
+          "ref": "peripheral_hr:zephyr"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "The CVE names subsys/net/ip/icmpv4.c; none of this code is in this firmware (not compiled, or removed by the linker).",
+        "justification": "code_not_present"
+      },
+      "ratings": [
+        {
+          "score": 4.8,
+          "severity": "medium",
+          "source": {
+            "name": "NVD"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CVE-2026-10640",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10640"
+      },
+      "description": "Zephyr's IPv6 Neighbor Discovery send paths (net_ipv6_send_na, net_ipv6_send_ns, net_ipv6_send_rs in subsys/net/ip/ipv6_nbr.c) updated the per-interface ICMP-sent statistics by calling net_pkt_iface(pkt) after net_send_data(pkt) had already returned successfully. On the success path the network stack owns and releases the packet's reference (the L2/driver send unrefs it, e.g. ethernet_send -> net_pkt_unref), so for a freshly allocated packet with refcount 1 the net_pkt slab block can be freed before the statistics line runs (synchronously when no TX queue thread is configured, or via a concurrent TX thread otherwise).\n\nThe subsequent net_pkt_iface(pkt) reads pkt->iface from the freed slab block, and with CONFIG_NET_STATISTICS_PER_INTERFACE enabled that loaded pointer is dereferenced to increment iface->stats.icmp.sent, a use-after-free (CWE-416). If the slab block was reallocated in the meantime the read/increment targets unrelated or attacker-influenced memory, yielding corrupted statistics, a fault/crash (denial of service), or potential limited memory corruption.\n\nThe vulnerable Neighbor Advertisement path is reachable by any unauthenticated on-link node simply by sending ICMPv6 Neighbor Solicitations to a Zephyr node with native IPv6 enabled (handle_ns_input -> net_ipv6_send_na).\n\nAffected from v3.3.0 through v4.4.0; the fix uses the already-available iface argument instead of touching the sent packet. Configurations without per-interface statistics dereference only a global counter and are not affected by the memory-safety aspect.",
+      "published": "2026-06-16T00:00:00Z",
+      "affects": [
+        {
+          "ref": "peripheral_hr:zephyr"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "The CVE names subsys/net/ip/ipv6_nbr.c; none of this code is in this firmware (not compiled, or removed by the linker).",
+        "justification": "code_not_present"
+      },
+      "ratings": [
+        {
+          "score": 4.2,
+          "severity": "medium",
+          "source": {
+            "name": "NVD"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CVE-2026-10642",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10642"
+      },
+      "description": "The Zephyr PL011 UART driver (drivers/serial/uart_pl011.c) contains an unbounded software loop in pl011_irq_tx_enable() that repeatedly invokes the interrupt-driven application callback while the TX interrupt mask bit (PL011_IMSC_TXIM) is set, to work around the controller's level-transition TX-interrupt behavior.\n\nWhen CTS hardware flow control is enabled (devicetree hw-flow-control or runtime UART_CFG_FLOW_CTRL_RTS_CTS) and the wired serial peer de-asserts CTS, the controller stops draining the TX FIFO; pl011_fifo_fill() then returns 0 on every call while the application still has pending data and therefore never disables the TX interrupt. The loop condition never clears, so the thread that called uart_irq_tx_enable() (e.g. h4_send() in the Bluetooth HCI H4 driver) spins indefinitely, hanging the executing context and stalling the transport \u2014 a denial of service (CWE-835).\n\nAn attacker controlling the device attached to the UART's CTS line can trigger the hang by withholding CTS during transmission. Because that peer is the device wired to the UART \u2014 which may be a removable or external module (e.g. an off-board Bluetooth controller on the HCI H4 link) rather than a permanently-bonded on-PCB part \u2014 the attack vector is scored Adjacent (AV:A) rather than Physical; the security subcommittee should confirm the vector against the specific deployment. Impact is availability only; there is no memory-safety, confidentiality, or integrity consequence.\n\nThe vulnerable loop was introduced in commit b783bc8448ef (Feb 2025) and shipped in releases v4.1.0 through v4.4.0. The fix breaks out of the loop when CTS is blocking and arms the CTS modem-status interrupt to resume transmission when CTS re-asserts.",
+      "published": "2026-06-24T00:00:00Z",
+      "affects": [
+        {
+          "ref": "peripheral_hr:zephyr"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "The CVE names drivers/serial/uart_pl011.c; none of this code is in this firmware (not compiled, or removed by the linker).",
+        "justification": "code_not_present"
+      },
+      "ratings": [
+        {
+          "score": 6.5,
+          "severity": "medium",
+          "source": {
+            "name": "NVD"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CVE-2026-10647",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10647"
+      },
+      "description": "The USB CDC-NCM device class (subsys/usb/device_next/class/usbd_cdc_ncm.c) ignores the return value of usbd_ep_enqueue() in its ethernet transmit callback cdc_ncm_send(). When the enqueue fails, the function still calls k_sem_take(&data->sync_sem, K_FOREVER), blocking on a completion semaphore that is only ever signaled from the bulk-IN transfer-completion callback. Because nothing was enqueued, that callback never fires and the calling thread \u2014 a shared network traffic-class TX thread \u2014 deadlocks permanently while holding the interface TX lock, halting transmission until reboot (and leaking the transmit buffer).\n\nThe enqueue fails under conditions controlled by the attached USB host: usbd_ep_enqueue() returns -EPERM whenever the bus is suspended (a standard, persistent host operation), and the underlying udc_ep_enqueue() returns -EPERM/-ENODEV on disconnect, bus reset, or endpoint disable. The cdc_ncm_send() guard only checks the DATA_IFACE_ENABLED and IFACE_UP flags, not the suspended state, so a packet transmitted while the host holds the bus suspended reaches the failing enqueue and deadlocks the TX path.\n\nThe realistic trigger is a bus suspend that occurs while the exported network interface is active and has traffic to send \u2014 host sleep, USB selective/auto-suspend, or hub power management \u2014 after which any device-originated packet deadlocks the path, recoverable only by reboot. The impact is a persistent loss of the virtual network connection between the host's NCM interface and the Zephyr device; because the deadlocked thread is a shared traffic-class TX thread, egress on other network interfaces can stall as well. There is no memory corruption or information disclosure.\n\nThe defect was introduced with the CDC-NCM driver and shipped in releases through v4.4.0; it is fixed by checking the usbd_ep_enqueue() return value and freeing the buffer before the blocking wait.",
+      "published": "2026-06-29T00:00:00Z",
+      "affects": [
+        {
+          "ref": "peripheral_hr:zephyr"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "The CVE names subsys/usb/device_next/class/usbd_cdc_ncm.c; none of this code is in this firmware (not compiled, or removed by the linker).",
+        "justification": "code_not_present"
+      },
+      "ratings": [
+        {
+          "score": 5.3,
+          "severity": "medium",
+          "source": {
+            "name": "NVD"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CVE-2026-10663",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10663"
+      },
+      "description": "In Zephyr's experimental USB host stack (CONFIG_USB_HOST_STACK), usbh_device_disconnect() (subsys/usb/host/usbh_device.c) freed the root usb_device slab object without clearing the cached pointer ctx->root. The bus removal handler dev_removed_handler() (subsys/usb/host/usbh_core.c) decides what to tear down solely from ctx->root, checking only that it is non-NULL.\n\nBecause UHC controller drivers (e.g. uhc_max3421e, uhc_mcux_common) synthesize UHC_EVT_DEV_REMOVED directly from physical bus line state with no debounce or state guard, an attacker with physical USB access (or a rogue device that bounces its connection) can deliver a second device-removed event after a root device disconnect. The handler then re-enters usbh_device_disconnect() with the dangling pointer, locking a mutex inside the freed object (use-after-free), removing the freed node from the device list, and calling k_mem_slab_free() on the already-freed block (double-free). If the slab block has been reissued to a newly attached device in between, this corrupts a live object.\n\nImpact is denial of service (crash) and memory corruption; the attack vector is physical/local. The flaw was introduced in v4.4.0 by the connect/disconnect refactor and is fixed by clearing ctx->root in usbh_device_disconnect() before freeing.",
+      "published": "2026-07-12T00:00:00Z",
+      "affects": [
+        {
+          "ref": "peripheral_hr:zephyr"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "The CVE names subsys/usb/host/usbh_core.c, subsys/usb/host/usbh_device.c; none of this code is in this firmware (not compiled, or removed by the linker).",
+        "justification": "code_not_present"
+      },
+      "ratings": [
+        {
+          "score": 6.1,
+          "severity": "medium",
+          "source": {
+            "name": "NVD"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CVE-2026-10664",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10664"
+      },
+      "description": "The nRF70 Wi-Fi driver's power-save event handler nrf_wifi_event_proc_get_power_save_info() in drivers/wifi/nrf_wifi/src/wifi_mgmt.c copied TWT (Target Wake Time) flow entries from an nrf_wifi_umac_event_power_save_info event into the fixed-size twt_flows[WIFI_MAX_TWT_FLOWS] (8-element) array of a caller-supplied struct wifi_ps_config, looping over event-provided num_twt_flows without validating it against WIFI_MAX_TWT_FLOWS or checking event_len. When num_twt_flows exceeds 8, the handler writes past the destination array (which is typically on the caller's stack, e.g. the wifi ps shell command) -- an out-of-bounds write of ~40-byte TWT entries -- and reads twt_flow_info[i] past the event buffer. The event is delivered by the nRF70 co-processor firmware in response to a host-initiated power-save GET, so reaching the overflow requires the firmware to emit a malformed or out-of-range event; the trust boundary is host-to-trusted-coprocessor rather than a direct remote-AP write, with over-the-air influence on the flow count being indirect and bounded by the 3-bit TWT flow-id space. Affected: builds with CONFIG_NRF70_STA_MODE on releases through v4.4.0. The fix rejects events with num_twt_flows > WIFI_MAX_TWT_FLOWS or with event_len shorter than the claimed entries, and adds a NULL check on the caller buffer.",
+      "published": "2026-07-12T00:00:00Z",
+      "affects": [
+        {
+          "ref": "peripheral_hr:zephyr"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "The CVE names drivers/wifi/nrf_wifi/src/wifi_mgmt.c; none of this code is in this firmware (not compiled, or removed by the linker).",
+        "justification": "code_not_present"
+      },
+      "ratings": [
+        {
+          "score": 5.0,
+          "severity": "medium",
+          "source": {
+            "name": "NVD"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CVE-2026-10669",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10669"
+      },
+      "description": "On Xtensa SoCs built with CONFIG_XTENSA_MPU and CONFIG_USERSPACE, arch_buffer_validate() in arch/xtensa/core/mpu.c \u2014 the architecture hook that verifies a user-mode-supplied buffer is accessible to the calling user thread with the requested permission \u2014 defaulted its return value to 0 (access permitted) and only set a denial result inside its per-MPU-region probe loop. When the rounded extent of the buffer wraps the 32-bit address space (size + alignment offset near SIZE_MAX, or ROUND_UP(size + offset) overflowing to 0), the loop executes zero iterations and the function returns 0 = permitted without probing any MPU region.\n\nThe syscall-layer pre-checks (K_SYSCALL_MEMORY_SIZE_CHECK / Z_DETECT_POINTER_OVERFLOW) only catch a raw addr+size wrap and do not cover the ROUND_UP-induced wrap, and the string path (arch_user_string_nlen -> arch_buffer_validate) has no syscall-layer guard at all.\n\nAn unprivileged user-mode thread can therefore pass a crafted (addr, size) to any syscall that validates user buffers via k_usermode_from_copy/to_copy or k_usermode_string_copy and have validation succeed for memory it must not access; the kernel then reads from (disclosure) or, with write=1, writes to (corruption) attacker-chosen kernel or other-partition memory on the thread's behalf, enabling information disclosure, memory corruption, privilege escalation, and denial of service.\n\nAffected from v3.7.0 (when Xtensa MPU userspace support was added) through v4.4.0. The fix changes the default to -EINVAL (deny by default), adds an explicit size_add_overflow check, and sets the success value only after the full range has been validated.",
+      "published": "2026-07-14T00:00:00Z",
+      "affects": [
+        {
+          "ref": "peripheral_hr:zephyr"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "The CVE names arch/xtensa/core/mpu.c; none of this code is in this firmware (not compiled, or removed by the linker).",
+        "justification": "code_not_present"
+      },
+      "ratings": [
+        {
+          "score": 7.8,
+          "severity": "high",
+          "source": {
+            "name": "NVD"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CVE-2026-10670",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10670"
+      },
+      "description": "The CONFIG_USERSPACE verification handler for the k_thread_name_copy() system call (z_vrfy_k_thread_name_copy() in kernel/thread.c) calls k_object_find() on the caller-supplied thread pointer and then dereferences the returned struct k_object without checking it for NULL. k_object_find() returns NULL whenever the supplied pointer is not a registered (static or dynamic) kernel object.\n\nThe pre-fix guard tested thread == NULL instead of ko == NULL, so an unprivileged user-mode thread that invokes k_thread_name_copy() with any non-NULL but unregistered pointer (e.g. an arbitrary address) passes the NULL test, after which the verifier reads ko->type through a NULL pointer.\n\nBecause the syscall verifier runs in supervisor mode, this NULL dereference is a kernel-mode fault that halts or reboots the system, allowing untrusted user code to crash the kernel across the userspace security boundary (denial of service). The marshaller passes the thread argument to the verifier without any prior K_SYSCALL_OBJ validation, so the bad pointer reaches the defect directly.\n\nThe flaw affects builds with CONFIG_USERSPACE and CONFIG_THREAD_NAME enabled and has been present since the special-case lookup was introduced around v2.0.0; it is present in v4.4.0 and earlier. The fix changes the guard to check the k_object_find() return value (ko == NULL) before dereferencing it.",
+      "published": "2026-07-14T00:00:00Z",
+      "affects": [
+        {
+          "ref": "peripheral_hr:zephyr"
+        }
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "Affected code is in this firmware (compiled and linked): kernel/thread.c"
+      },
+      "ratings": [
+        {
+          "score": 5.5,
+          "severity": "medium",
+          "source": {
+            "name": "NVD"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CVE-2026-10671",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10671"
+      },
+      "description": "In Zephyr's kernel pipe implementation, the userspace syscall verifier z_vrfy_k_pipe_init() in kernel/pipe.c used K_SYSCALL_OBJ() (which requires the kernel object to already be initialized) instead of K_SYSCALL_OBJ_NEVER_INIT() (which rejects an already-initialized object). As a result, on CONFIG_USERSPACE builds an unprivileged user thread that has been granted access to a k_pipe object can invoke the k_pipe_init syscall to re-initialize a pipe that is already in use.\n\nz_impl_k_pipe_init() unconditionally resets the ring buffer, sets pipe->waiting to 0, and re-initializes both wait queues (z_waitq_init on pipe->data and pipe->space) without waking or accounting for threads currently blocked on the pipe. Any thread already pended in k_pipe_read()/k_pipe_write() is left orphaned: still marked pending with pended_on pointing at the cleared wait queue and with stale qnode_dlist links into the (now re-initialized) embedded list head.\n\nWhen such an orphaned waiter is later timed out or woken, the scheduler calls sys_dlist_remove() on its stale node, writing through dangling prev/next pointers into kernel wait-queue/scheduler structures, causing list corruption (an attacker-driven invalid kernel write), lost wakeups, indefinitely blocked threads, and silent data loss. The flaw lets a deprivileged user thread corrupt the state of a kernel object shared with other threads/partitions.\n\nThe fix switches the verifier to K_SYSCALL_OBJ_NEVER_INIT(), matching the existing k_msgq_init verifier, so a user thread can no longer re-initialize a live pipe. The vulnerable code shipped in v4.1.0 and remained through v4.4.0.",
+      "published": "2026-07-14T00:00:00Z",
+      "affects": [
+        {
+          "ref": "peripheral_hr:zephyr"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "The CVE names kernel/pipe.c; none of this code is in this firmware (not compiled, or removed by the linker).",
+        "justification": "code_not_present"
+      },
+      "ratings": [
+        {
+          "score": 7.1,
+          "severity": "high",
+          "source": {
+            "name": "NVD"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CVE-2026-10673",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10673"
+      },
+      "description": "The Zephyr ADIN2111/ADIN1110 10BASE-T1S/T1L Ethernet driver (drivers/ethernet/eth_adin2111.c) reassembles received Ethernet frames in OPEN Alliance (OA) SPI mode by copying device-supplied 64-byte data chunks into a fixed static buffer ctx->buf of size CONFIG_ETH_ADIN2111_BUFFER_SIZE (default 1524 bytes). In eth_adin2111_oa_data_read(), each valid chunk was memcpy'd into ctx->buf[ctx->scur] and the write cursor scur advanced, with no check that scur + len stayed within the buffer. The number of chunks (up to 255, from the BUFSTS RCA field) and the per-chunk length are taken entirely from the frame data received off the wire; the cursor is only reset on a start-of-frame chunk. An attacker on the single-pair Ethernet segment can therefore send a frame whose reassembled size exceeds the configured buffer, causing the driver's RX offload thread to write attacker-controlled frame bytes past the end of the static buffer into adjacent driver/kernel memory (up to roughly 14.8 KB in the worst case). This is a remotely/adjacently reachable out-of-bounds write (CWE-787) that can corrupt memory and cause denial of service or potentially code execution. The defect was introduced when OA SPI support was added (commit 0ca8b0756b1) and shipped in releases v3.7.0 through v4.4.0. The fix adds a bounds check that drops the oversized frame and resets the cursor before the copy.",
+      "published": "2026-07-15T00:00:00Z",
+      "affects": [
+        {
+          "ref": "peripheral_hr:zephyr"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "The CVE names drivers/ethernet/eth_adin2111.c; none of this code is in this firmware (not compiled, or removed by the linker).",
+        "justification": "code_not_present"
+      },
+      "ratings": [
+        {
+          "score": 8.3,
+          "severity": "high",
+          "source": {
+            "name": "NVD"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CVE-2026-10681",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10681"
+      },
+      "description": "In Zephyr's userspace dynamic-objects subsystem, thread_idx_alloc() in kernel/userspace/userspace.c allocated a new thread permission index from the global _thread_idx_map[] bitmap without holding lists_lock.\n\nOn SMP systems, two user-mode threads invoking the k_object_alloc(K_OBJ_THREAD) syscall concurrently can both observe the same low free bit, perform the same non-atomic RMW to clear it, and return the identical tidx.\n\nThe two newly created K_OBJ_THREAD objects are then assigned the same thread_id, so the two user threads alias a single bit position in every kernel object's perms[] bitfield: any subsequent grant of access on a kernel object to one thread is implicitly a grant to the other, defeating userspace ACL isolation. A secondary lost-update window between the unlocked &=~BIT() in alloc and the locked |= BIT() in thread_idx_free() can also leak entries from the thread-index pool.\n\nThe defect is reachable from any user-mode thread via the unrestricted __syscall k_object_alloc and is gated on CONFIG_USERSPACE, CONFIG_DYNAMIC_OBJECTS, and CONFIG_SMP. The flaw was introduced when the per-thread permission index was added in 2018 and is present in every release up to and including v4.4.0. Fixed by holding lists_lock across the bitmap RMW and the permissions clear (and inlining the obj_list traversal that previously took the lock itself).",
+      "published": "2026-07-25T00:00:00Z",
+      "affects": [
+        {
+          "ref": "peripheral_hr:zephyr"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "The CVE concerns a subsystem enabled by CONFIG_USERSPACE; none is enabled in this build.",
+        "justification": "requires_configuration"
+      },
+      "ratings": [
+        {
+          "score": 6.5,
+          "severity": "medium",
+          "source": {
+            "name": "NVD"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CVE-2026-10682",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10682"
+      },
+      "description": "The userspace verifier z_vrfy_log_filter_set() for the log_filter_set syscall in subsys/logging/log_mgmt.c performed a signed comparison against the int16_t src_id parameter: src_id < (int16_t)log_src_cnt_get(domain_id). Any negative value for src_id (e.g. -1) trivially satisfied this check and was forwarded into z_impl_log_filter_set, where it propagated to filter_set() and ultimately to get_dynamic_filter(), which uses source_id as an unsigned index into the linker-section array &TYPE_SECTION_START(log_dynamic)[source_id].filters.\n\nAfter implicit conversion through uint32_t, an int16_t -1 becomes 0xFFFFFFFF, indexing log_dynamic far out of bounds and causing the kernel to perform an OOB read and an OOB read-modify-write (LOG_FILTER_SLOT_GET/SET) against memory adjacent to the log_dynamic section.\n\nThe written value is a constrained 3-bit log level slot within the targeted 32-bit word, but the target address is attacker-chosen (a small negative offset from log_dynamic) and the write occurs in supervisor mode following a syscall from an unprivileged user thread, providing a kernel memory-corruption / privilege-escalation primitive.\n\nThe defect is reachable on any build with CONFIG_USERSPACE=y and CONFIG_LOG_RUNTIME_FILTERING=y. Present from Zephyr v3.3.0 through v4.4.1. The fix replaces the signed bound check with an unsigned comparison: (uint32_t)src_id < log_src_cnt_get(domain_id), which correctly rejects negative inputs.",
+      "published": "2026-07-27T00:00:00Z",
+      "affects": [
+        {
+          "ref": "peripheral_hr:zephyr"
+        }
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "Affected code is in this firmware (compiled and linked): subsys/logging/log_mgmt.c"
+      },
+      "ratings": [
+        {
+          "score": 6.6,
+          "severity": "medium",
+          "source": {
+            "name": "NVD"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CVE-2026-10683",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10683"
+      },
+      "description": "In the Synopsys DesignWare I2C driver (drivers/i2c/i2c_dw.c) operating in target/slave mode, the rx_full interrupt handler gates the write_requested() callback on dw->state != CMD_SEND, and dw->state is only reset to READY on a STOP interrupt. The START_DET interrupt, whose handler in i2c_dw_slave_read_clear_intr_bits() would reset the state on every (re)START, was never added to the enabled interrupt mask in i2c_dw_slave_register(), so that recovery path was dead code.\n\nAs a result, if the STOP interrupt is lost (bus glitch/reset, or a concurrent master driving STOP) or the bus master issues a legal WRITE-repeated-START-WRITE sequence with the same direction, the driver remains in CMD_SEND permanently and never invokes write_requested() again for the life of the target.\n\nAn I2C master on the same physical bus can deliberately trigger this, causing the I2C target function to malfunction for all subsequent write transactions and desynchronizing consumer framing state (e.g. MCTP-over-I2C), a recoverable-by-reset denial of service of the target peripheral.\n\nThe fix unmasks START_DET so the state is reset at every bus (re)START. Impact is availability-only over a local board-level bus; no memory corruption results in the in-tree consumer, whose per-byte buffer write is independently bounds-checked.",
+      "published": "2026-07-27T00:00:00Z",
+      "affects": [
+        {
+          "ref": "peripheral_hr:zephyr"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "The CVE names drivers/i2c/i2c_dw.c; none of this code is in this firmware (not compiled, or removed by the linker).",
+        "justification": "code_not_present"
+      },
+      "ratings": [
+        {
+          "score": 2.4,
+          "severity": "low",
+          "source": {
+            "name": "NVD"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CVE-2026-10685",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10685"
+      },
+      "description": "The Zephyr Bluetooth GATT client CCC-write response handler gatt_write_ccc_rsp() in subsys/bluetooth/host/gatt.c invoked the application's params->subscribe() callback after it had already called params->notify(conn, params, NULL, 0).\n\nPer the public GATT API, a notify callback with NULL data is the documented signal that the subscription has terminated and the bt_gatt_subscribe_params struct may be freed or reused by the application; calling subscribe() on the struct afterwards is a use-after-free, including an indirect call through the freed params->subscribe function pointer.\n\nThe error branch is remotely (adjacent) reachable: a Zephyr device acting as a GATT client that calls bt_gatt_subscribe() can be driven into this ordering when a connected GATT server peer answers the CCC write with an ATT Error Response (the peer-supplied error code flows through att_error_rsp -> att_handle_rsp into gatt_write_ccc_rsp).\n\nFor applications that free or recycle subscription parameters in their notification-termination handler, this results in memory corruption, a crash (denial of service), or potentially attacker-influenced control flow. The fix reorders the handler so the subscribe() callback runs before the terminating notify(NULL) in both the error and unsubscribe paths.",
+      "published": "2026-07-31T00:00:00Z",
+      "affects": [
+        {
+          "ref": "peripheral_hr:zephyr"
+        }
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "Affected code is in this firmware (compiled and linked): subsys/bluetooth/host/gatt.c"
+      },
+      "ratings": [
+        {
+          "score": 7.6,
+          "severity": "high",
+          "source": {
+            "name": "NVD"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CVE-2026-10686",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10686"
+      },
+      "description": "Zephyr's IPv6 forwarding path re-sent routed unicast packets without ever decrementing the IPv6 hop limit. Both routing branches of ipv6_route_packet() (subsys/net/ip) were affected: the explicit-route path (net_route_packet()) and the on-link cross-interface path (net_route_packet_if()). Each set the packet forwarding flag and called net_send_data() with the hop limit untouched and no expiry check.\n\nPer RFC 8200 the hop-limit decrement is the mechanism that bounds packet lifetime and terminates routing loops; without it, a device acting as an IPv6 router relays looping packets indefinitely. An on-path attacker who can induce or exploit a transient L3 loop turns it into a permanent forwarding storm, causing CPU/bandwidth resource exhaustion (availability DoS) on the forwarder and adjacent links; path-discovery and loop diagnostics that rely on hop-limit expiry are also defeated.\n\nAffected configurations. In every affected release the forwarding path is reached via CONFIG_NET_ROUTE (enabled by default when CONFIG_NET_IPV6_NBR_CACHE is set), together with CONFIG_NET_ROUTING for cross-interface routing. Note that CONFIG_NET_IPV6_FORWARDING and CONFIG_NET_IPV4_FORWARDING \u2014 which appear in the fix and in this advisory's evidence notes \u2014 were introduced after v4.4.0, when the routing options were split and renamed; they do not exist in any affected release. When auditing a v4.4.1-or-earlier configuration, look for CONFIG_NET_ROUTE and CONFIG_NET_ROUTING.\n\nIPv4 is not affected in any release. The IPv4 forwarding path (net_route_ipv4_packet() in route_ipv4.c) was added after v4.4.0 and has never shipped in a release. Its TTL decrement and IPv4 header-checksum recomputation landed on main as part of the same fix, so the evidence notes below discuss it, but no released version is reachable by way of IPv4.\n\nAffected releases are v1.8.0 through v4.4.1: v1.8.0 introduced net_route_packet() and v2.2.0 added net_route_packet_if(), and neither decremented the hop limit. v4.3.1 carries the explicit-route fix but not the on-link one, so it is affected as well. Fixed on main by 7d8f1afa7345 (explicit-route path) and 589eadc74efa (on-link path).",
+      "published": "2026-07-31T00:00:00Z",
+      "affects": [
+        {
+          "ref": "peripheral_hr:zephyr"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "The CVE names subsys/net/ip; none of this code is in this firmware (not compiled, or removed by the linker).",
+        "justification": "code_not_present"
+      },
+      "ratings": [
+        {
+          "score": 5.8,
+          "severity": "medium",
+          "source": {
+            "name": "NVD"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CVE-2026-10773",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10773"
+      },
+      "description": "The DHCPv4 client helper net_dhcpv4_msg_type_name() in subsys/net/lib/dhcpv4/dhcpv4.c indexes a static 8-element const char * name table after a faulty bounds check. The guard used msg_type <= sizeof(name) instead of msg_type <= ARRAY_SIZE(name); sizeof returns the byte size of the pointer array (32 on 32-bit, 64 on 64-bit targets) rather than the element count of 8, so message-type values from 9 up to that byte size pass the check and cause name[msg_type - 1] to read past the end of the array.\n\nThe msg_type value originates from the DHCP MESSAGE TYPE option, which is read as an unchecked raw byte from a received packet (net_pkt_read_u8) and passed unmodified into the lookup. A DHCP server, or any host able to inject a spoofed DHCP reply onto the client's link, can therefore drive the index out of bounds. The out-of-range slot yields a garbage const char * that is then dereferenced by a %s log conversion.\n\nThe lookup is reached only from a debug log statement (NET_DBG / LOG_DBG), so the out-of-bounds read is triggerable only when the DHCPv4 log module is built at DEBUG level (CONFIG_NET_DHCPV4_LOG_LEVEL_DBG), which is not the default configuration. When that condition holds, the result is an out-of-bounds read and a wild-pointer dereference: most likely a crash of the DHCP client (denial of service) and potentially disclosure of an adjacent pointer's contents through the log output. The fix replaces sizeof with ARRAY_SIZE, restoring the correct 1..8 acceptance window.",
+      "published": "2026-08-01T00:00:00Z",
+      "affects": [
+        {
+          "ref": "peripheral_hr:zephyr"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "The CVE names subsys/net/lib/dhcpv4/dhcpv4.c; none of this code is in this firmware (not compiled, or removed by the linker).",
+        "justification": "code_not_present"
+      },
+      "ratings": [
+        {
+          "score": 5.4,
+          "severity": "medium",
+          "source": {
+            "name": "NVD"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CVE-2026-10774",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10774"
+      },
+      "description": "Zephyr's Bluetooth Mesh subnet key management leaks one PSA Crypto key slot on every subnet-key teardown. In subsys/bluetooth/mesh/subnet.c, net_keys_create() imports the Private Beacon Key into a PSA key slot under CONFIG_BT_MESH_PRIV_BEACONS (enabled by default), but subnet_keys_destroy() guarded the matching psa_destroy_key() with CONFIG_BT_MESH_V1d1. That Kconfig symbol was removed when explicit Mesh 1.0.1 support was dropped, so the destroy branch became permanently dead code and the import is never balanced by a destroy.\n\nThe imbalanced teardown is reached every time subnet keys are destroyed: deleting a subnet (Config Server NetKey Delete), completing a Key Refresh Procedure (which retires the old key set), and resetting/re-provisioning the node. The over-the-air triggers are processed only under the node's device key, so they are exercisable by the provisioner or network administrator that owns the node, reachable over the Bluetooth Mesh network.\n\nWith the default CONFIG_MBEDTLS_PSA_KEY_SLOT_COUNT of 16, repeated add/delete or key-refresh cycles exhaust the shared PSA key-slot pool after roughly a dozen rounds. Once exhausted, bt_mesh_private_beacon_key() and thus subnet creation fail: the node can no longer add subnets or complete key refresh, and other PSA crypto consumers on the device may be starved, until the device is rebooted. The fix aligns the destroy guard with the import guard (CONFIG_BT_MESH_PRIV_BEACONS) so each slot is freed.",
+      "published": "2026-08-02T00:00:00Z",
+      "affects": [
+        {
+          "ref": "peripheral_hr:zephyr"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "The CVE names subsys/bluetooth/mesh/subnet.c; none of this code is in this firmware (not compiled, or removed by the linker).",
+        "justification": "code_not_present"
+      },
+      "ratings": [
+        {
+          "score": 2.4,
+          "severity": "low",
+          "source": {
+            "name": "NVD"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CVE-2026-10848",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10848"
+      },
+      "description": "The OCPP 1.6 client in subsys/net/lib/ocpp parsed inbound WAMP RPC frames in parse_rpc_msg() (subsys/net/lib/ocpp/ocpp_j.c) using a hand-rolled helper, extract_string_field(), that copied the message's uid and action fields with strncpy(out_buf, token + 1, outlen - 1) and then scanned the result with strchr(out_buf, '\"'). Because strncpy does not NUL-terminate the destination when the source is at least outlen - 1 (127) bytes long, the subsequent strchr reads past the 128-byte destination buffer into adjacent stack memory; if a \" byte is found beyond the buffer, a one-byte out-of-bounds NUL write also occurs. A related defect in extract_payload() runs strchr/strrchr over the receive buffer, which may not be NUL-terminated when a maximal-length frame fills it.\n\nThe parsed bytes come directly from the OCPP central-system server over a websocket: the reader thread fills recv_buf via websocket_recv_msg() and calls parse_rpc_msg() on each inbound DATA frame (subsys/net/lib/ocpp/ocpp.c). A malicious or compromised central server, or an on-path attacker (OCPP is commonly deployed over plain ws://), can send an RPC frame whose uid or action field is 127+ bytes with no closing quote, triggering the out-of-bounds access.\n\nThe primary impact is a remotely triggerable denial of service: the unbounded scan can fault on an unmapped page, and the stray NUL write can corrupt adjacent stack state. The over-read data is not reflected to the peer, so disclosure is limited. The feature is EXPERIMENTAL and must be explicitly enabled (CONFIG_OCPP). The fix replaces the manual parser with the bounds-respecting json_mixed_arr_parse() and copies the extracted uid with an explicitly NUL-terminated buffer, eliminating both over-reads.",
+      "published": "2026-08-02T00:00:00Z",
+      "affects": [
+        {
+          "ref": "peripheral_hr:zephyr"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "The CVE names subsys/net/lib/ocpp, subsys/net/lib/ocpp/ocpp.c, subsys/net/lib/ocpp/ocpp_j.c; none of this code is in this firmware (not compiled, or removed by the linker).",
+        "justification": "code_not_present"
+      },
+      "ratings": [
+        {
+          "score": 7.0,
+          "severity": "high",
+          "source": {
+            "name": "NVD"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CVE-2026-10849",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10849"
+      },
+      "description": "The hawkBit device management client in subsys/mgmt/hawkbit accumulates the body of an HTTP response from the update server into a heap buffer in response_json_cb() (subsys/mgmt/hawkbit/hawkbit.c). The buffer is sized to hold the received body bytes but reserves no space for a terminating NUL. When the full response has arrived, the code writes response_data[downloaded_size] = '\\0' \u2014 and whenever the accumulated body length equals the allocation, that terminator lands one byte past the end of the heap object (a heap-based out-of-bounds write, CWE-122 / CWE-787).\n\nThe body length and fragmentation are taken directly from the parsed HTTP response (rsp->body_frag_start / rsp->body_frag_len) and are fully controlled by the remote hawkBit server, which chooses its own response length. The precise trigger depends on how the buffer grows, and both forms are remotely reachable. Since v4.0.0 the reallocation is sized to exactly downloaded_size + body_len, so any response body larger than the 1100-byte initial buffer makes the out-of-bounds write deterministic; such response sizes are normal for hawkBit deployment metadata. Before v4.0.0 the buffer grew by doubling and the growth check ((downloaded_size + body_len) > response_buffer_size) is false at equality, so a response body whose length is exactly the current allocation \u2014 1100 bytes with the default initial buffer \u2014 skips the reallocation entirely and writes the terminator at response_data[1100] of an 1100-byte object. The HTTP length-mismatch check does not catch this, because the declared and received lengths genuinely agree. Either form is reachable by a malicious, compromised, or man-in-the-middle update server (TLS is optional and, when enabled, does not protect against a hostile server), with no authentication of response content and no client-side length cap protecting the write.\n\nThe out-of-bounds write is a fixed single NUL byte immediately following the allocation, corrupting adjacent allocator metadata or the next allocation. The practical impact is heap corruption leading to denial of service (fault on a subsequent allocation or free), with the bounded, allocator-dependent possibility of further corruption. The fix sizes the buffer to the body length plus one and copies with memcpy, ensuring the terminator always lands within the allocation.",
+      "published": "2026-08-03T00:00:00Z",
+      "affects": [
+        {
+          "ref": "peripheral_hr:zephyr"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "The CVE names subsys/mgmt/hawkbit, subsys/mgmt/hawkbit/hawkbit.c; none of this code is in this firmware (not compiled, or removed by the linker).",
+        "justification": "code_not_present"
+      },
+      "ratings": [
+        {
+          "score": 8.2,
+          "severity": "high",
+          "source": {
+            "name": "NVD"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CVE-2026-11368",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-11368"
+      },
+      "description": "The Bluetooth host ATT layer (subsys/bluetooth/host/att.c) associates each in-flight ATT TX buffer with its owning channel via the static tx_meta_data_storage[] array (data->att_chan = chan). When a buffer's last reference is dropped, its net-buf destroy callback defers the completion handling to the system workqueue (att_tx_destroy -> att_tx_destroy_work_handler -> att_on_sent_cb -> bt_att_sent), where bt_att_sent dereferences the channel and its ATT context (sys_slist_get(&att->reqs)).\n\nWhen a peer disconnects while an ATT PDU (a server notification/indication or any response) is still in flight in the controller TX path, L2CAP tears the channel down in l2cap_chan_del(): it runs the disconnected callback and then the released callback (bt_att_released), which frees the channel slab slot. Because the in-flight buffer is held by the connection TX path rather than the channel's own queue, its deferred destroy work can run after the channel has been freed. The att_on_sent_cb guard intended to drop the stale callback itself dereferences meta->att_chan, which is now a dangling pointer into a freed (and possibly reused) slab slot.\n\nA remote peer with an ATT connection can drive this by disconnecting during routine ATT traffic; no pairing or user interaction is required to reach the ATT bearer. The result is a use-after-free read/write of freed channel memory, reliably crashing the Bluetooth host (denial of service) and, because the channel slab slot may be reused, potentially corrupting live memory.\n\nThe fix makes bt_att_released() NULL the att_chan field of every tx_meta_data_storage[] entry still referencing the channel before freeing it, so the deferred guard observes a NULL pointer and drops the callback. Teardown and the destroy work both run on the cooperative system workqueue, so the array update is serialized and needs no lock.",
+      "published": "2026-08-04T00:00:00Z",
+      "affects": [
+        {
+          "ref": "peripheral_hr:zephyr"
+        }
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "Affected code is in this firmware (compiled and linked): subsys/bluetooth/host/att.c"
+      },
+      "ratings": [
+        {
+          "score": 7.1,
+          "severity": "high",
+          "source": {
+            "name": "NVD"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CVE-2026-18746",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18746"
+      },
+      "description": "parse_write_op() in subsys/net/lib/lwm2m/lwm2m_message_handling.c handles inbound CoAP WRITE/CREATE requests that carry a Block1 option. For the first block of a transfer it called init_block_ctx() and then immediately stored the peer-selected block size with block_ctx->ctx.block_size = block_size before inspecting the return code. init_block_ctx() sets the caller's pointer to NULL and returns -ENOMEM when no entry of the static block1_contexts[] pool is free or timed out, so that store dereferences a NULL pointer.\n\nThe pool holds CONFIG_LWM2M_NUM_BLOCK1_CONTEXT entries (default 3) and an entry is only reclaimed once its transfer completes, fails, or ages past 30 seconds. A peer that reaches the client's LwM2M socket can therefore start three block-wise writes on three distinct object paths with the CoAP More bit set and leave them incomplete, then send the first block of a fourth write on a new path to reach the unguarded dereference. Reachability is gated only by the connected UDP socket's source-address filter unless CONFIG_LWM2M_DTLS_SUPPORT is enabled \u2014 which has no default \u2014 so in a NoSec deployment an on-path or address-spoofing attacker needs no credentials; the same sequence is also reachable from a bootstrap or lower-trust server, and can be hit accidentally by a legitimate server running four concurrent block transfers.\n\nThe write targets a fixed low address with a value between 0 and 7, so the consequence is a fatal memory fault (BusFault or corrupted low memory leading to a fault) rather than a usable memory-corruption primitive: the device crashes or resets. Confidentiality and integrity are not affected. The fix moves the store below the guard and validates the context pointer itself instead of the return code, so the context is only touched once it is known to be valid.",
+      "published": "2026-09-29T00:00:00Z",
+      "affects": [
+        {
+          "ref": "peripheral_hr:zephyr"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "The CVE names subsys/net/lib/lwm2m/lwm2m_message_handling.c; none of this code is in this firmware (not compiled, or removed by the linker).",
+        "justification": "code_not_present"
+      },
+      "ratings": [
+        {
+          "score": 5.9,
+          "severity": "medium",
+          "source": {
+            "name": "NVD"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CVE-2026-2411",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-2411"
+      },
+      "description": "Zephyr's Bluetooth host declares a GATT characteristic as two consecutive attributes: a Characteristic Declaration whose permission is hard-coded to BT_GATT_PERM_READ, and a Characteristic Value attribute that carries the application-specified security permissions (e.g. BT_GATT_PERM_READ_ENCRYPT / READ_AUTHEN / READ_LESC). The public notify and indicate APIs explicitly accept either attribute, and passing the declaration is the documented, common idiom. Before sending each notification or indication, the host re-checks link security with bt_gatt_check_perm() against params->attr in gatt_notify(), gatt_indicate(), and gatt_notify_multiple_verify_params() (subsys/bluetooth/host/gatt.c).\n\nWhen the application passed the Characteristic Declaration attribute, the host correctly redirected the value handle but left params->attr pointing at the declaration, so the security check evaluated the declaration's permissions (no security required) instead of the value's. As a result the encryption/authentication/LESC requirement configured on the characteristic value was skipped. The Notify-Multiple path additionally used a mask that omitted the LE Secure Connections requirement.\n\nA remote peer triggers the disclosure by connecting (optionally without pairing or encryption) and writing the Client Characteristic Configuration descriptor to enable notifications or indications, causing the server to emit the protected value over a link that has not reached the required security level. The impact is information disclosure / access-control bypass for characteristic values the application intended to expose only over a secured link; exposure depends on the application declaring encrypt/authen-required notify/indicate characteristics and on the CCC being writable at a lower security tier. There is no memory-safety or availability impact.\n\nThe fix adds bt_gatt_attr_resolve_value(), which maps a declaration attribute to the following value attribute before the permission check, and switches the Notify-Multiple path to the full BT_GATT_PERM_READ_ENCRYPT_MASK so the LESC requirement is also enforced.",
+      "published": "2026-08-01T00:00:00Z",
+      "affects": [
+        {
+          "ref": "peripheral_hr:zephyr"
+        }
+      ],
+      "analysis": {
+        "state": "in_triage",
+        "detail": "Affected code is in this firmware (compiled and linked): subsys/bluetooth/host/gatt.c"
+      },
+      "ratings": [
+        {
+          "score": 6.5,
+          "severity": "medium",
+          "source": {
+            "name": "NVD"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CVE-2026-7007",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-7007"
+      },
+      "description": "The Zephyr ext2 file system validates the on-disk superblock in ext2_verify_disk_superblock() (subsys/fs/ext2/ext2_impl.c) before completing a mount. The validator checked the magic number, block size, revision and feature flags, but did not verify that the on-disk fields s_blocks_per_group and s_inodes_per_group are non-zero. Both fields are read directly from the image and are later used as divisors during mount-time initialization.\n\nDuring mount, get_ngroups() divides and modulos s_blocks_count by s_blocks_per_group (reached via ext2_fetch_block_group() from ext2_init_fs()), and get_itable_entry() divides (ino - 1) by s_inodes_per_group when fetching the root inode (both in subsys/fs/ext2/ext2_diskops.c). A superblock with either field set to zero therefore causes an integer division by zero during the mount sequence.\n\nAn attacker who can present a crafted ext2 image to a device that mounts ext2 \u2014 removable media such as an SD card or a USB mass-storage device \u2014 can trigger this. On ARMv7-M / ARMv8-M-mainline Cortex-M targets, divide-by-zero trapping is enabled (SCB_CCR_DIV_0_TRP), so the division raises a UsageFault that Zephyr treats as a fatal error, producing a denial of service. The impact is limited to availability; the malformed value is consumed only as a divisor.\n\nThe fix rejects a zero s_blocks_per_group or s_inodes_per_group in the superblock validator, returning -EINVAL so the mount fails before any block-group or inode I/O occurs.",
+      "published": "2026-07-24T00:00:00Z",
+      "affects": [
+        {
+          "ref": "peripheral_hr:zephyr"
+        }
+      ],
+      "analysis": {
+        "state": "not_affected",
+        "detail": "The CVE names subsys/fs/ext2/ext2_diskops.c, subsys/fs/ext2/ext2_impl.c; none of this code is in this firmware (not compiled, or removed by the linker).",
+        "justification": "code_not_present"
+      },
+      "ratings": [
+        {
+          "score": 4.6,
+          "severity": "medium",
+          "source": {
+            "name": "NVD"
+          }
+        }
+      ]
+    }
+  ]
+}

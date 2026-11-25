@@ -1,0 +1,6 @@
+west-commands:
+  - file: fwvex/west_command.py
+    commands:
+      - name: fwvex
+        class: FwSbom
+        help: CycloneDX SBOM and CVE/VEX check for a Zephyr build
